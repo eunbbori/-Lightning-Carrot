@@ -9,6 +9,7 @@ import {
   myPageIconContainer,
 } from "./HeaderStyle";
 import AppButton from "../Button/AppButton";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -18,8 +19,12 @@ const Header = () => {
           <img src={Logo1} />
         </div>
         <nav css={navContainer}>
-          <div>중고 상품</div>
-          <div>과외/클래스</div>
+          <div>
+            <Link to="/">중고 상품</Link>
+          </div>
+          <div>
+            <Link to="/secondMenu">과외/클래스</Link>
+          </div>
         </nav>
         <div css={myPageIconContainer}>
           <AppButton

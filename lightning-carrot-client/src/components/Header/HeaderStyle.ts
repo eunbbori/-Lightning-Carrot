@@ -24,6 +24,12 @@ export const navContainer = css`
   align-items: center;
   gap: 2rem;
   place-content: center;
+  font-size: 1.1rem;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 export const myPageIconContainer = css`
