@@ -10,6 +10,7 @@ import {
 import { filterPart, GridWrapper } from "./HomeStyle";
 import AppSearch from "../../components/Search/AppSearch";
 import GridContent from "../../components/GridContent/GridContent";
+import RegionDropdown from "../../components/Dropdown/regionDropdown/RegionDropdown";
 
 const Home = () => {
   return (
@@ -41,6 +42,7 @@ const Home = () => {
               type={"text"}
             />
           </div>
+          <RegionDropdown />
           <div css={GridWrapper}>
             <GridContent />
             <GridContent />

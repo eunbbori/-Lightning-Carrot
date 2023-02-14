@@ -23,7 +23,7 @@ export const descContainer = css`
 `;
 export const title = css`
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
 `;
 export const region = css`
@@ -33,9 +33,10 @@ export const subContentContainer = css`
   display: flex;
   margin-top: 1rem;
   font-weight: bold;
+  justify-content: space-between;
 `;
 export const price = css`
-  font-size: 1rem;
+  font-size: 1.3rem;
 `;
 export const likeContainer = css`
   display: flex;
