@@ -7,8 +7,9 @@ import {
   HomeMainContainer,
   subtitle,
 } from "../../styles/common";
-import { filterPart } from "./HomeStyle";
+import { filterPart, GridWrapper } from "./HomeStyle";
 import AppSearch from "../../components/Search/AppSearch";
+import GridContent from "../../components/GridContent/GridContent";
 
 const Home = () => {
   return (
@@ -40,7 +41,16 @@ const Home = () => {
               type={"text"}
             />
           </div>
-          <div>상품 그리드 컴포넌트 반복</div>
+          <div css={GridWrapper}>
+            <GridContent />
+            <GridContent />
+            <GridContent />
+            <GridContent />
+            <GridContent />
+            <GridContent />
+            <GridContent />
+            <GridContent />
+          </div>
         </div>
       </div>
     </>

@@ -12,3 +12,7 @@ export const filterPart = css`
     align-items: center;
   }
 `;
+export const GridWrapper = css`
+  display: flex;
+  flex-wrap: wrap;
+`;
