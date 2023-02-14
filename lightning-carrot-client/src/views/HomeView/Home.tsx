@@ -15,14 +15,14 @@ import RegionDropdown from "../../components/Dropdown/regionDropdown/RegionDropd
 
 const Home = () => {
   const [hide, setHide] = useState(true);
-  const [contentHide, setContentHide] = useState(true);
-  useEffect(() => {
-    if (!hide) {
-      setContentHide(false);
-    } else {
-      setContentHide(true);
-    }
-  }, [hide]);
+  // const [contentHide, setContentHide] = useState(true);
+  // useEffect(() => {
+  //   if (!hide) {
+  //     setContentHide(false);
+  //   } else {
+  //     setContentHide(true);
+  //   }
+  // }, [hide]);
   return (
     <>
       <Header />
@@ -59,21 +59,21 @@ const Home = () => {
             />
           </div>
           {hide === false ? (
-            <RegionDropdown mouseEnter={() => setHide(false)} />
-          ) : (
             <RegionDropdown
-              className="regionHide"
+              mouseEnter={() => setHide(false)}
               mouseLeave={() => setHide(true)}
             />
-          )}
-          {contentHide === false ? (
-            <RegionDropdown mouseEnter={() => setHide(false)} />
           ) : (
+            <RegionDropdown className="regionHide" />
+          )}
+          {/* {contentHide === false ? (
             <RegionDropdown
-              className="regionHide"
+              mouseEnter={() => setHide(false)}
               mouseLeave={() => setHide(true)}
             />
-          )}
+          ) : (
+            <RegionDropdown className="regionHide" />
+          )} */}
           {/* {hide === false && (
             <RegionDropdown
               mouseEnter={() => setContentHide(false)}
