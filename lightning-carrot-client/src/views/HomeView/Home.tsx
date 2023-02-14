@@ -15,14 +15,7 @@ import RegionDropdown from "../../components/Dropdown/regionDropdown/RegionDropd
 
 const Home = () => {
   const [hide, setHide] = useState(true);
-  // const [contentHide, setContentHide] = useState(true);
-  // useEffect(() => {
-  //   if (!hide) {
-  //     setContentHide(false);
-  //   } else {
-  //     setContentHide(true);
-  //   }
-  // }, [hide]);
+
   return (
     <>
       <Header />
@@ -66,26 +59,7 @@ const Home = () => {
           ) : (
             <RegionDropdown className="regionHide" />
           )}
-          {/* {contentHide === false ? (
-            <RegionDropdown
-              mouseEnter={() => setHide(false)}
-              mouseLeave={() => setHide(true)}
-            />
-          ) : (
-            <RegionDropdown className="regionHide" />
-          )} */}
-          {/* {hide === false && (
-            <RegionDropdown
-              mouseEnter={() => setContentHide(false)}
-              mouseLeave={() => setContentHide(true)}
-            />
-          )}
-          {contentHide === false && (
-            <RegionDropdown
-              mouseEnter={() => setContentHide(false)}
-              mouseLeave={() => setContentHide(true)}
-            />
-          )} */}
+
           <div css={GridWrapper}>
             <GridContent />
             <GridContent />
