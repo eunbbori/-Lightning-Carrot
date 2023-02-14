@@ -37,4 +37,22 @@ export const RegionContainer = css`
       background-color: ${theme.sideColor};
     }
   }
+  .RegionSubContainer--selected {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 5px 16px;
+    border-radius: 24px;
+    border: 2px solid rgb(230, 233, 235);
+    margin-top: 0.5rem;
+    align-items: center;
+    font-family: inherit;
+    font-weight: none;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    background-color: red;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
