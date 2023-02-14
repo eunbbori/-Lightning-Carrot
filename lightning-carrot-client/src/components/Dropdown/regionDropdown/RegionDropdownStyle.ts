@@ -6,7 +6,7 @@ export const RegionWrapper = css`
   position: absolute;
   z-index: 99;
   width: 35rem;
-  height: 12rem;
+  height: 13rem;
   box-shadow: rgb(33 56 71 / 20%) 0px 2px 24px 0px,
     rgb(33 56 71 / 20%) 0px 6px 4px 0px;
   background-color: rgb(255, 255, 255);
@@ -14,6 +14,9 @@ export const RegionWrapper = css`
 export const RegionContainer = css`
   display: flex;
   flex-flow: row wrap;
+  padding: 12px 12px 16px;
+  gap: 5px;
+  place-content: center;
 
   .RegionSubContainer {
     display: flex;

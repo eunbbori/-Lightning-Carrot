@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { useState } from "react";
 import AppDropdown from "../../components/Dropdown/AppDropdown";
 import Header from "../../components/Header/Header";
 import { IoIosArrowDown } from "react-icons/io";
@@ -13,6 +14,9 @@ import GridContent from "../../components/GridContent/GridContent";
 import RegionDropdown from "../../components/Dropdown/regionDropdown/RegionDropdown";
 
 const Home = () => {
+  const [hide, setHide] = useState(true);
+  const [contentHide, setContentHide] = useState(true);
+
   return (
     <>
       <Header />
@@ -26,6 +30,8 @@ const Home = () => {
               text={"지역"}
               arrowIcon={<IoIosArrowDown />}
               className={"regionDropdown"}
+              mouseEnter={() => setHide(false)}
+              mouseLeave={() => setHide(true)}
             />
             <AppDropdown
               width={"120px"}
@@ -42,7 +48,18 @@ const Home = () => {
               type={"text"}
             />
           </div>
-          <RegionDropdown />
+          {hide === false && (
+            <RegionDropdown
+              mouseEnter={() => setContentHide(false)}
+              mouseLeave={() => setContentHide(true)}
+            />
+          )}
+          {contentHide === false && (
+            <RegionDropdown
+              mouseEnter={() => setContentHide(false)}
+              mouseLeave={() => setContentHide(true)}
+            />
+          )}
           <div css={GridWrapper}>
             <GridContent />
             <GridContent />

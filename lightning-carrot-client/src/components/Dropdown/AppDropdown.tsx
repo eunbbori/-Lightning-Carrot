@@ -10,9 +10,16 @@ const AppDropdown: React.FC<DropdownProps> = ({
   text,
   arrowIcon,
   className,
+  mouseEnter,
+  mouseLeave,
 }) => {
   return (
-    <div css={[dropdownStyle, { width }, { height }]} className={className}>
+    <div
+      css={[dropdownStyle, { width }, { height }]}
+      className={className}
+      onMouseEnter={mouseEnter}
+      onMouseLeave={mouseLeave}
+    >
       <div>{text}</div>
       <div css={arrowStyle}>{arrowIcon}</div>
     </div>

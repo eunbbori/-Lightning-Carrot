@@ -2,8 +2,12 @@
 import React from "react";
 import { RegionContainer, RegionWrapper } from "./RegionDropdownStyle";
 import AppButton from "./../../Button/AppButton";
+import { RegionDropdownProps } from "../../../interface/DropdownProps";
 
-const RegionDropdown = () => {
+const RegionDropdown: React.FC<RegionDropdownProps> = ({
+  mouseEnter,
+  mouseLeave,
+}) => {
   const regionList = [
     "전체",
     "서울",
@@ -26,7 +30,11 @@ const RegionDropdown = () => {
   ];
 
   return (
-    <div css={RegionWrapper}>
+    <div
+      css={RegionWrapper}
+      onMouseEnter={mouseEnter}
+      onMouseLeave={mouseLeave}
+    >
       <div css={RegionContainer}>
         {regionList.map((region) => (
           <AppButton
