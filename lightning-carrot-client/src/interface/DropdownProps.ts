@@ -11,4 +11,5 @@ export interface DropdownProps {
 export interface RegionDropdownProps {
   mouseEnter?: MouseEventHandler<HTMLDivElement> | undefined;
   mouseLeave?: MouseEventHandler<HTMLDivElement> | undefined;
+  className?: string;
 }

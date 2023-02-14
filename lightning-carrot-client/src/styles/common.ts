@@ -8,6 +8,9 @@ export const HomeMainWrapper = css`
 export const HomeMainContainer = css`
   width: 70vw;
   margin: 0px auto 40px;
+  .regionHide {
+    display: none;
+  }
 `;
 export const subtitle = css`
   /* background-color: yellow; */

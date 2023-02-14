@@ -10,6 +10,10 @@ export const RegionWrapper = css`
   box-shadow: rgb(33 56 71 / 20%) 0px 2px 24px 0px,
     rgb(33 56 71 / 20%) 0px 6px 4px 0px;
   background-color: rgb(255, 255, 255);
+
+  .regionHide {
+    display: none;
+  }
 `;
 export const RegionContainer = css`
   display: flex;

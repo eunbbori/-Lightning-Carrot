@@ -15,6 +15,7 @@ export const searchStyle = css`
   padding: 10px;
   text-align: center;
   align-self: center;
+  font-family: inherit;
 
   &:focus {
     outline: none;

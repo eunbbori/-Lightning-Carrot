@@ -7,6 +7,7 @@ import { RegionDropdownProps } from "../../../interface/DropdownProps";
 const RegionDropdown: React.FC<RegionDropdownProps> = ({
   mouseEnter,
   mouseLeave,
+  className,
 }) => {
   const regionList = [
     "전체",
@@ -39,6 +40,7 @@ const RegionDropdown: React.FC<RegionDropdownProps> = ({
       css={RegionWrapper}
       onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}
+      className={className}
     >
       <div css={RegionContainer}>
         {regionList.map((region, idx) => (

@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AppDropdown from "../../components/Dropdown/AppDropdown";
 import Header from "../../components/Header/Header";
 import { IoIosArrowDown } from "react-icons/io";
@@ -16,7 +16,13 @@ import RegionDropdown from "../../components/Dropdown/regionDropdown/RegionDropd
 const Home = () => {
   const [hide, setHide] = useState(true);
   const [contentHide, setContentHide] = useState(true);
-
+  useEffect(() => {
+    if (!hide) {
+      setContentHide(false);
+    } else {
+      setContentHide(true);
+    }
+  }, [hide]);
   return (
     <>
       <Header />
@@ -30,8 +36,12 @@ const Home = () => {
               text={"지역"}
               arrowIcon={<IoIosArrowDown />}
               className={"regionDropdown"}
-              mouseEnter={() => setHide(false)}
-              mouseLeave={() => setHide(true)}
+              mouseEnter={() => {
+                setHide(false);
+              }}
+              mouseLeave={() => {
+                setHide(true);
+              }}
             />
             <AppDropdown
               width={"120px"}
@@ -48,7 +58,23 @@ const Home = () => {
               type={"text"}
             />
           </div>
-          {hide === false && (
+          {hide === false ? (
+            <RegionDropdown mouseEnter={() => setHide(false)} />
+          ) : (
+            <RegionDropdown
+              className="regionHide"
+              mouseLeave={() => setHide(true)}
+            />
+          )}
+          {contentHide === false ? (
+            <RegionDropdown mouseEnter={() => setHide(false)} />
+          ) : (
+            <RegionDropdown
+              className="regionHide"
+              mouseLeave={() => setHide(true)}
+            />
+          )}
+          {/* {hide === false && (
             <RegionDropdown
               mouseEnter={() => setContentHide(false)}
               mouseLeave={() => setContentHide(true)}
@@ -59,7 +85,7 @@ const Home = () => {
               mouseEnter={() => setContentHide(false)}
               mouseLeave={() => setContentHide(true)}
             />
-          )}
+          )} */}
           <div css={GridWrapper}>
             <GridContent />
             <GridContent />
