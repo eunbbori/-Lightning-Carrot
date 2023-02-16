@@ -70,9 +70,7 @@ const Home = () => {
                 width={"10rem"}
                 text={"관심 상품"}
                 onClick={toggleHandler}
-                className={
-                  isBookmark === true ? "bookMarked" : "not-bookMarked"
-                }
+                toggleProps={isBookmark}
               />
             </div>
           </div>

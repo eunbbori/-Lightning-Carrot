@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-
 import React from "react";
 import { ToggleSwitchProps } from "../../interface/ToggleSwitchProps";
 import { Container, Label, ToggleContainer } from "./ToggleSwitchStyle";
@@ -9,13 +8,14 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
   text,
   onClick,
   className,
+  toggleProps,
 }) => {
   return (
     <div css={[Container, { width }]}>
       <div css={Label}>{text}</div>
-      <div css={ToggleContainer} onClick={onClick}>
-        <div className={className}></div>
-      </div>
+      <ToggleContainer onClick={onClick} isBookmark={toggleProps}>
+        <div className="switch"></div>
+      </ToggleContainer>
     </div>
   );
 };
