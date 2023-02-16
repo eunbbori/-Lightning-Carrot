@@ -12,9 +12,11 @@ import { filterPart, GridWrapper } from "./HomeStyle";
 import AppSearch from "../../components/Search/AppSearch";
 import GridContent from "../../components/GridContent/GridContent";
 import RegionDropdown from "../../components/Dropdown/regionDropdown/RegionDropdown";
+import CategoryDropdown from "./../../components/Dropdown/categoryDropdown/CategoryDropDown";
 
 const Home = () => {
   const [hide, setHide] = useState(true);
+  const [categoryHide, setCategoryHide] = useState(true);
 
   return (
     <>
@@ -42,6 +44,12 @@ const Home = () => {
               text={"카테고리"}
               arrowIcon={<IoIosArrowDown />}
               className={"categoryDropdown"}
+              mouseEnter={() => {
+                setCategoryHide(false);
+              }}
+              mouseLeave={() => {
+                setCategoryHide(true);
+              }}
             />
             <AppSearch
               width={"300px"}
@@ -58,6 +66,14 @@ const Home = () => {
             />
           ) : (
             <RegionDropdown className="regionHide" />
+          )}
+          {categoryHide === false ? (
+            <CategoryDropdown
+              mouseEnter={() => setCategoryHide(false)}
+              mouseLeave={() => setCategoryHide(true)}
+            />
+          ) : (
+            <CategoryDropdown className="categoryHide" />
           )}
 
           <div css={GridWrapper}>

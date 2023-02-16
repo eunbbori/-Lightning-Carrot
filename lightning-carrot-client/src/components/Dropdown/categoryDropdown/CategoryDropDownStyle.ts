@@ -2,52 +2,48 @@
 import { css } from "@emotion/react";
 import theme from "../../../styles/theme";
 
-export const RegionWrapper = css`
+export const CategoryWrapper = css`
   position: absolute;
+  left: 26rem;
   z-index: 99;
-  width: 35rem;
-  height: 13rem;
+  width: 9rem;
+  height: 35rem;
   box-shadow: rgb(33 56 71 / 20%) 0px 2px 24px 0px,
     rgb(33 56 71 / 20%) 0px 6px 4px 0px;
   background-color: rgb(255, 255, 255);
 
-  &.regionHide {
+  &.categoryHide {
     display: none;
   }
 `;
-export const RegionContainer = css`
+export const CategoryContainer = css`
   display: flex;
   flex-flow: row wrap;
-  padding: 12px 12px 16px;
-  gap: 5px;
   place-content: center;
 
-  .RegionSubContainer {
+  .CategorySubContainer {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     padding: 5px 16px;
-    border-radius: 24px;
-    border: 2px solid rgb(230, 233, 235);
     margin-top: 0.5rem;
     align-items: center;
     font-family: inherit;
     font-weight: none;
     font-size: 1rem;
     letter-spacing: 2px;
+    border-radius: 0px;
 
     &:hover {
       cursor: pointer;
       background-color: ${theme.sideColor};
     }
   }
-  .RegionSubContainer--selected {
+  .CategorySubContainer--selected {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     padding: 5px 16px;
-    border-radius: 24px;
-    border: 2px solid rgb(230, 233, 235);
     margin-top: 0.5rem;
     align-items: center;
     font-family: inherit;
@@ -55,6 +51,8 @@ export const RegionContainer = css`
     font-size: 1rem;
     letter-spacing: 2px;
     background-color: red;
+    border-radius: 0px;
+
     &:hover {
       cursor: pointer;
     }

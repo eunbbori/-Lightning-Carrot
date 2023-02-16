@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { RegionContainer, RegionWrapper } from "./RegionDropdownStyle";
 import AppButton from "./../../Button/AppButton";
-import { RegionDropdownProps } from "../../../interface/DropdownProps";
+import { ContentDropdownProps } from "../../../interface/DropdownProps";
 
-const RegionDropdown: React.FC<RegionDropdownProps> = ({
+const RegionDropdown: React.FC<ContentDropdownProps> = ({
   mouseEnter,
   mouseLeave,
   className,

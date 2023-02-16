@@ -8,7 +8,7 @@ export interface DropdownProps {
   mouseEnter?: MouseEventHandler<HTMLDivElement> | undefined;
   mouseLeave?: MouseEventHandler<HTMLDivElement> | undefined;
 }
-export interface RegionDropdownProps {
+export interface ContentDropdownProps {
   mouseEnter?: MouseEventHandler<HTMLDivElement> | undefined;
   mouseLeave?: MouseEventHandler<HTMLDivElement> | undefined;
   className?: string;
