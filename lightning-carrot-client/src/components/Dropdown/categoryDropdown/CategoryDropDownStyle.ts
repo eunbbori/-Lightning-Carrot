@@ -4,7 +4,7 @@ import theme from "../../../styles/theme";
 
 export const CategoryWrapper = css`
   position: absolute;
-  left: 26rem;
+  left: 25rem;
   z-index: 99;
   width: 9rem;
   height: 35rem;
@@ -50,7 +50,7 @@ export const CategoryContainer = css`
     font-weight: none;
     font-size: 1rem;
     letter-spacing: 2px;
-    background-color: red;
+    background-color: #f05053;
     border-radius: 0px;
 
     &:hover {
