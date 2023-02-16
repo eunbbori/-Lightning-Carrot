@@ -22,13 +22,23 @@ export const ToggleContainer = css`
   transition-duration: 0.5s;
   cursor: pointer;
   align-self: center;
-`;
-export const Switch = css`
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  transition-duration: 0.5s;
-  background-color: rgb(255, 255, 255);
-  transform: translateX(0px);
+
+  .bookMarked {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition-duration: 0.5s;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(0px);
+  }
+  .not-bookMarked {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition-duration: 0.5s;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(25px);
+  }
 `;

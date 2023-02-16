@@ -18,6 +18,10 @@ import ToggleSwitch from "../../components/ToggleSwitch/ToggleSwitch";
 const Home = () => {
   const [hide, setHide] = useState(true);
   const [categoryHide, setCategoryHide] = useState(true);
+  const [isBookmark, setBookmark] = useState(false);
+  const toggleHandler = () => {
+    setBookmark(!isBookmark);
+  };
 
   return (
     <>
@@ -62,7 +66,14 @@ const Home = () => {
               />
             </div>
             <div className="part2">
-              <ToggleSwitch width={"10rem"} text={"관심 상품"} />
+              <ToggleSwitch
+                width={"10rem"}
+                text={"관심 상품"}
+                onClick={toggleHandler}
+                className={
+                  isBookmark === true ? "bookMarked" : "not-bookMarked"
+                }
+              />
             </div>
           </div>
           {hide === false ? (

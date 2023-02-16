@@ -8,6 +8,7 @@ export const filterPart = css`
   gap: 1rem;
   .regionDropdown {
     align-items: center;
+    margin-right: 1rem;
   }
   .categoryDropdown {
     align-items: center;

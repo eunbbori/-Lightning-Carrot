@@ -50,7 +50,7 @@ export const CategoryContainer = css`
     font-weight: none;
     font-size: 1rem;
     letter-spacing: 2px;
-    background-color: #f05053;
+    background-color: ${theme.pointColor};
     border-radius: 0px;
 
     &:hover {
