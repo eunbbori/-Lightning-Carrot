@@ -4,7 +4,7 @@ import theme from "../../../styles/theme";
 
 export const CategoryWrapper = css`
   position: absolute;
-  left: 25rem;
+  left: 26rem;
   z-index: 99;
   width: 9rem;
   height: 35rem;

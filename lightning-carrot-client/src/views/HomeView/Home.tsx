@@ -14,6 +14,7 @@ import GridContent from "../../components/GridContent/GridContent";
 import RegionDropdown from "../../components/Dropdown/regionDropdown/RegionDropdown";
 import CategoryDropdown from "./../../components/Dropdown/categoryDropdown/CategoryDropDown";
 import ToggleSwitch from "../../components/ToggleSwitch/ToggleSwitch";
+import { productList } from "./../../mockData/productMockData";
 
 const Home = () => {
   const [hide, setHide] = useState(true);
@@ -92,14 +93,17 @@ const Home = () => {
           )}
 
           <div css={GridWrapper}>
-            <GridContent />
-            <GridContent />
-            <GridContent />
-            <GridContent />
-            <GridContent />
-            <GridContent />
-            <GridContent />
-            <GridContent />
+            {productList.map((product, idx) => (
+              <GridContent
+                key={idx}
+                img={product.img}
+                title={product.title}
+                regionFull={product.region}
+                category={product.category}
+                price={product.price}
+                heartCount={product.heartCount}
+              />
+            ))}
           </div>
         </div>
       </div>

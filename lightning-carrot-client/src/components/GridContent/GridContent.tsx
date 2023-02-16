@@ -1,33 +1,39 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import productEx from "../../assets/images/product1.jpg";
 import { BsFillSuitHeartFill } from "react-icons/bs";
+import { GridContentProps } from "./../../interface/GridContentProps";
 import {
   gridContainer,
   imgContainer,
   descContainer,
-  title,
-  region,
   subContentContainer,
-  price,
   likeContainer,
   likeCount,
+  titleStyle,
+  regionStyle,
+  priceStyle,
 } from "./GridContentStyle";
 
-const GridContent = () => {
+const GridContent: React.FC<GridContentProps> = ({
+  img,
+  title,
+  regionFull,
+  price,
+  heartCount,
+}) => {
   return (
     <div css={gridContainer}>
       <div css={imgContainer}>
-        <img src={productEx} className="produceImg" />
+        <img src={img} className="produceImg" />
       </div>
       <div css={descContainer}>
-        <div css={title}>몇번 안 입은 옷 팝니다</div>
-        <div css={region}>서울시 종로구</div>
+        <div css={titleStyle}>{title}</div>
+        <div css={regionStyle}>{regionFull}</div>
         <div css={subContentContainer}>
-          <div css={price}>5000원</div>
+          <div css={priceStyle}>{price}</div>
           <div css={likeContainer}>
             <BsFillSuitHeartFill className="heartIcon" />
-            <div css={likeCount}>10</div>
+            <div css={likeCount}>{heartCount}</div>
           </div>
         </div>
       </div>

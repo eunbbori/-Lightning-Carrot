@@ -21,12 +21,12 @@ export const imgContainer = css`
 export const descContainer = css`
   margin-top: 1rem;
 `;
-export const title = css`
+export const titleStyle = css`
   font-weight: bold;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 `;
-export const region = css`
+export const regionStyle = css`
   font-size: 1rem;
 `;
 export const subContentContainer = css`
@@ -35,7 +35,7 @@ export const subContentContainer = css`
   font-weight: bold;
   justify-content: space-between;
 `;
-export const price = css`
+export const priceStyle = css`
   font-size: 1.3rem;
 `;
 export const likeContainer = css`
