@@ -13,3 +13,10 @@ export const buttonStyle = css`
     cursor: pointer;
   }
 `;
+export const btnTextStyle = css`
+  display: flex;
+  justify-content: center;
+  .iconStyle {
+    margin-top: 0.1rem;
+  }
+`;

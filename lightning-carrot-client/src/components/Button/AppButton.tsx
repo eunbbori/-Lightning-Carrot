@@ -2,11 +2,12 @@
 
 import React from "react";
 import { ButtonProps } from "../../interface/ButtonProps";
-import { buttonStyle } from "./AppButtonStyle";
+import { btnTextStyle, buttonStyle } from "./AppButtonStyle";
 
 const AppButton: React.FC<ButtonProps> = ({
   width,
   height,
+  icon,
   text,
   className,
   onClick,
@@ -19,7 +20,10 @@ const AppButton: React.FC<ButtonProps> = ({
       onClick={onClick}
       type={type}
     >
-      {text}
+      <div css={btnTextStyle}>
+        <div className="iconStyle">{icon}</div>
+        {text}
+      </div>
     </button>
   );
 };
