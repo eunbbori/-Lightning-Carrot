@@ -40,3 +40,15 @@ export const myPageIconContainer = css`
     height: 2rem;
   }
 `;
+export const SignInUpContainer = css`
+  display: flex;
+  align-items: center;
+  .loginBtn {
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  .RegisterBtn {
+    font-family: inherit;
+    font-size: 1rem;
+  }
+`;

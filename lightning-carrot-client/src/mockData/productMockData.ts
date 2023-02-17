@@ -14,7 +14,7 @@ export const productList = [
     img: "https://cdn.pixabay.com/photo/2016/06/03/17/35/shoes-1433925_960_720.jpg",
     title: "몇번 안 신은 신발 팝니다",
     region: "경기",
-    regionFull: "경기도 용인시",
+    regionFull: "경기도 용인시 처인구",
     category: "여성잡화",
     price: "1000원",
     heartCount: 5,

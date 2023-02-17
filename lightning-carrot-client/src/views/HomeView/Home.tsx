@@ -98,7 +98,7 @@ const Home = () => {
                 key={idx}
                 img={product.img}
                 title={product.title}
-                regionFull={product.region}
+                regionFull={product.regionFull}
                 category={product.category}
                 price={product.price}
                 heartCount={product.heartCount}
