@@ -2,10 +2,20 @@
 import { css } from "@emotion/react";
 import theme from "../../../styles/theme";
 
-export const imgWrapper = css`
+export const ContentWrapper = css`
   display: flex;
+  margin-bottom: 3rem;
+
+  .titleContainer {
+    width: 60vw;
+    margin: auto;
+    border-radius: 3px;
+    border: 1px solid ${theme.sideColor};
+  }
 `;
-export const imgTitleContainer = css`
+export const TitleContainerStyle = css`
+  width: 10rem;
+  margin-top: 1rem;
   .imgCountStyle {
     font-size: 1.2rem;
     font-weight: bold;
@@ -14,6 +24,7 @@ export const imgTitleContainer = css`
 export const TitleStyle = css`
   font-size: 1.5rem;
   font-weight: bold;
+  align-self: center;
 `;
 export const imgContainer = css`
   width: 60vw;
