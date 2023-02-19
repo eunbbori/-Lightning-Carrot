@@ -1,4 +1,4 @@
-import { RefObject } from "react";
+import { ChangeEventHandler, RefObject } from "react";
 
 export interface InputProps {
   defaultValue?: string;
@@ -9,6 +9,10 @@ export interface InputProps {
   placeholder?: string;
   accept?: string;
   className: string;
+  value?: string;
+  htmlValue?: string;
+  checked?: boolean;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   refer?: RefObject<HTMLInputElement>;
+  onClick?: ChangeEventHandler<HTMLInputElement>;
 }

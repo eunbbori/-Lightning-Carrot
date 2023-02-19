@@ -2,6 +2,7 @@ import React from "react";
 /** @jsxImportSource @emotion/react */
 import Header from "../../../components/Header/Header";
 import ImageUpload from "../../../components/Image/ImageUpload";
+import AppInputRadio from "../../../components/InputRadio/AppInputRadio";
 import AppInputText from "../../../components/InputText/AppInputText";
 import { HomeMainContainer, HomeMainWrapper } from "../../../styles/common";
 import {
@@ -13,6 +14,10 @@ import {
 } from "./AddProductViewStyle";
 
 const AddProduct = () => {
+  const productStatusList = [
+    { value: "중고상품", htmlValue: "중고상품" },
+    { value: "새상품", htmlValue: "새상품" },
+  ];
   return (
     <>
       <Header />
@@ -47,6 +52,24 @@ const AddProduct = () => {
               <div css={TitleStyle}>거래지역</div>
             </div>
             <div css={regionContainer}></div>
+          </div>
+          <div css={ContentWrapper}>
+            <div css={TitleContainerStyle}>
+              <div css={TitleStyle}>상태</div>
+            </div>
+            <div className="statusContainer">
+              {productStatusList.map((productStatus) => {
+                return (
+                  <AppInputRadio
+                    key={productStatus.value}
+                    type={"radio"}
+                    className={"productStatusRadio"}
+                    value={productStatus.value}
+                    htmlValue={productStatus.htmlValue}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

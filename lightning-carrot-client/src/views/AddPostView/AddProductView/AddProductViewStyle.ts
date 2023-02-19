@@ -13,6 +13,17 @@ export const ContentWrapper = css`
     border: 1px solid ${theme.sideColor};
     margin-top: 0.5rem;
   }
+  .statusContainer {
+    display: flex;
+    width: 60vw;
+    height: 4vh;
+    margin: auto;
+    border-radius: 3px;
+    border: 1px solid ${theme.sideColor};
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
 `;
 export const TitleContainerStyle = css`
   width: 10rem;
