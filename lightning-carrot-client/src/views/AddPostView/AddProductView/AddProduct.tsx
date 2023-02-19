@@ -7,6 +7,7 @@ import { HomeMainContainer, HomeMainWrapper } from "../../../styles/common";
 import {
   ContentWrapper,
   imgContainer,
+  regionContainer,
   TitleContainerStyle,
   TitleStyle,
 } from "./AddProductViewStyle";
@@ -33,13 +34,19 @@ const AddProduct = () => {
             <div className="titleContainer">
               <AppInputText
                 width={"70rem"}
-                height={"3rem"}
+                height={"2rem"}
                 type={"text"}
                 className={"inputTitle"}
                 required={true}
                 placeholder={"상품명을 2자 이상 입력해주세요"}
               />
             </div>
+          </div>
+          <div css={ContentWrapper}>
+            <div css={TitleContainerStyle}>
+              <div css={TitleStyle}>거래지역</div>
+            </div>
+            <div css={regionContainer}></div>
           </div>
         </div>
       </div>
