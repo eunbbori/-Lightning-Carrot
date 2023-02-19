@@ -39,7 +39,7 @@ const AddProduct = () => {
             <div className="titleContainer">
               <AppInputText
                 width={"70rem"}
-                height={"2rem"}
+                height={"3rem"}
                 type={"text"}
                 className={"inputTitle"}
                 required={true}
@@ -70,6 +70,22 @@ const AddProduct = () => {
                 );
               })}
             </div>
+          </div>
+          <div css={ContentWrapper}>
+            <div css={TitleContainerStyle}>
+              <div css={TitleStyle}>가격</div>
+            </div>
+            <div className="priceContainer">
+              <AppInputText
+                width={"14rem"}
+                height={"2.5rem"}
+                type={"number"}
+                className={"inputPrice"}
+                required={true}
+                placeholder={"숫자만 입력해주세요"}
+              />
+            </div>
+            <div className="wonContainer">원</div>
           </div>
         </div>
       </div>

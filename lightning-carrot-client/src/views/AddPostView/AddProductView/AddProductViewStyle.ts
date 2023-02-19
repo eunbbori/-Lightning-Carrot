@@ -16,13 +16,24 @@ export const ContentWrapper = css`
   .statusContainer {
     display: flex;
     width: 60vw;
-    height: 4vh;
+    height: 3vh;
     margin: auto;
     border-radius: 3px;
     border: 1px solid ${theme.sideColor};
     margin-top: 0.5rem;
     font-size: 1.5rem;
     padding: 1rem;
+  }
+  .priceContainer {
+    width: 13vw;
+    border-radius: 3px;
+    border: 1px solid ${theme.sideColor};
+    margin-top: 0.5rem;
+  }
+  .wonContainer {
+    font-size: 1.5rem;
+    align-self: center;
+    margin-left: 0.5rem;
   }
 `;
 export const TitleContainerStyle = css`
