@@ -61,12 +61,48 @@ export const imgContainer = css`
   margin: auto;
 `;
 export const RegionContainer = css`
+  display: flex;
   width: 30vw;
   height: 40vh;
   border: 1px solid ${theme.sideColor};
   border-radius: 3px;
   margin-top: 1rem;
-  margin-left: 1rem;
+  font-size: 1.5rem;
+  .RegionDepth1 {
+    width: 9vw;
+    text-align: center;
+    overflow-y: scroll;
+  }
+  .RegionDepth2 {
+    width: 11vw;
+    text-align: center;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .RegionDepth3 {
+    width: 11vw;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+export const RegionDepthBtnStyle = css`
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  &:hover {
+    color: ${theme.pointColor};
+  }
+  &.regionDepthBtn--clicked {
+    color: ${theme.pointColor};
+  }
+  &.regionDepthBtn {
+    &:hover {
+      color: ${theme.sideColor};
+    }
+  }
 `;
 export const TextAreaStyle = css`
   width: 60vw;

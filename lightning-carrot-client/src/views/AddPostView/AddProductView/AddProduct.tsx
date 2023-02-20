@@ -5,12 +5,14 @@ import Header from "../../../components/Header/Header";
 import ImageUpload from "../../../components/Image/ImageUpload";
 import AppInputRadio from "../../../components/InputRadio/AppInputRadio";
 import AppInputText from "../../../components/InputText/AppInputText";
+import { regionDepth } from "../../../mockData/regionMockData";
 import { HomeMainContainer, HomeMainWrapper } from "../../../styles/common";
 import {
   CategoryContainer,
   ContentWrapper,
   imgContainer,
   RegionContainer,
+  RegionDepthBtnStyle,
   TextAreaStyle,
   TitleContainerStyle,
   TitleStyle,
@@ -49,6 +51,32 @@ const AddProduct = () => {
     newSelected[idx] = true;
     setSelected(newSelected);
   };
+  const [depth1Clicked, setDepth1Clicked] = useState<string[]>([]);
+  const [depth2Clicked, setDepth2Clicked] = useState<string[]>([]);
+  const [depth3Clicked, setDepth3Clicked] = useState<string[]>([]);
+  const [depth1Idx, setDepth1Idx] = useState(0);
+  const [depth2Idx, setDepth2Idx] = useState(0);
+  const regionDepth1Handler = (idx: number) => {
+    const newClicked = Array(regionDepth.length).fill(false);
+    newClicked[idx] = true;
+    setDepth1Clicked(newClicked);
+    setDepth1Idx(idx);
+  };
+  const regionDepth2Handler = (idx: number) => {
+    const newClicked = Array(regionDepth.length).fill(false);
+    newClicked[idx] = true;
+    setDepth2Clicked(newClicked);
+    setDepth2Idx(idx);
+  };
+
+  const regionDepth3Handler = (idx: number) => {
+    const newClicked = Array(regionDepth.length).fill(false);
+    newClicked[idx] = true;
+    setDepth3Clicked(newClicked);
+  };
+  const depth2Arr = Object.values(regionDepth[depth1Idx]);
+  const depth3Arr: any[] = Object.values(depth2Arr[0][depth2Idx]);
+
   return (
     <>
       <Header />
@@ -102,7 +130,82 @@ const AddProduct = () => {
             <div css={TitleContainerStyle}>
               <div css={TitleStyle}>거래지역</div>
             </div>
-            <div css={RegionContainer}></div>
+            <div css={RegionContainer}>
+              <div className="RegionDepth1">
+                {regionDepth.map((regionFirst, idx) => (
+                  <AppButton
+                    css={RegionDepthBtnStyle}
+                    key={idx}
+                    width={"6rem"}
+                    height={"2rem"}
+                    className={
+                      depth1Clicked[idx]
+                        ? "regionDepthBtn--clicked"
+                        : "regionDepthBtn"
+                    }
+                    type={"button"}
+                    text={Object.keys(regionDepth[idx])}
+                    onClick={() => regionDepth1Handler(idx)}
+                  />
+                ))}
+              </div>
+              <div className="RegionDepth2">
+                {typeof depth2Arr[0][0] === "string" &&
+                  depth2Arr[0].map((regionSecond: any, idx: number) => (
+                    <AppButton
+                      css={RegionDepthBtnStyle}
+                      key={idx}
+                      width={"8rem"}
+                      height={"2rem"}
+                      className={
+                        depth2Clicked[idx]
+                          ? "regionDepthBtn--clicked"
+                          : "regionDepthBtn"
+                      }
+                      type={"button"}
+                      text={depth2Arr[0][idx]}
+                      onClick={() => regionDepth2Handler(idx)}
+                    />
+                  ))}
+                {typeof depth2Arr[0][0] === "object" &&
+                  depth2Arr[0].map((regionSecond: any, idx: number) => (
+                    <AppButton
+                      css={RegionDepthBtnStyle}
+                      key={idx}
+                      width={"8rem"}
+                      height={"2rem"}
+                      className={
+                        depth2Clicked[idx]
+                          ? "regionDepthBtn--clicked"
+                          : "regionDepthBtn"
+                      }
+                      type={"button"}
+                      text={Object.keys(depth2Arr[0][idx])}
+                      onClick={() => regionDepth2Handler(idx)}
+                    />
+                  ))}
+              </div>
+              <div className="RegionDepth3">
+                {typeof depth2Arr[0][0] === "object" &&
+                  depth3Arr[0] &&
+                  depth3Arr[0].map((regionThird: any, idx: number) => (
+                    <AppButton
+                      css={RegionDepthBtnStyle}
+                      key={idx}
+                      width={"6rem"}
+                      height={"2rem"}
+                      className={
+                        depth2Clicked[idx]
+                          ? "regionDepthBtn--clicked"
+                          : "regionDepthBtn"
+                      }
+                      type={"button"}
+                      text={depth3Arr[depth2Idx][idx]}
+                      // onClick={() => regionDepth3Handler(idx)}
+                    />
+                  ))}
+              </div>
+            </div>
           </div>
           <div css={ContentWrapper}>
             <div css={TitleContainerStyle}>
