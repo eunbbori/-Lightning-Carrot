@@ -10,6 +10,7 @@ const theme = {
   mainColor: "#ECEEF0",
   sideColor: "#B1B1B1",
   pointColor: "#f05053",
+  pointColor2: "#ad5389",
   mq: {
     laptop: `@media only screen and (min-width: ${size.largest})`,
     tablet: `@media only screen and (min-width: ${size.large})`,

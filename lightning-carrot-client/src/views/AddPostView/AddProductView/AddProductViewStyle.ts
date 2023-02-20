@@ -35,7 +35,13 @@ export const ContentWrapper = css`
     align-self: center;
     margin-left: 0.5rem;
   }
+  .TextCountContainer {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: flex-end;
+  }
 `;
+
 export const TitleContainerStyle = css`
   width: 10rem;
   margin-top: 1rem;
@@ -54,11 +60,58 @@ export const imgContainer = css`
   /* justify-content: space-between; */
   margin: auto;
 `;
-export const regionContainer = css`
+export const RegionContainer = css`
   width: 30vw;
   height: 40vh;
   border: 1px solid ${theme.sideColor};
   border-radius: 3px;
   margin-top: 1rem;
   margin-left: 1rem;
+`;
+export const TextAreaStyle = css`
+  width: 60vw;
+  height: 30vh;
+  border: 1px solid ${theme.sideColor};
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.5rem;
+  resize: none;
+  &:focus {
+    outline: none;
+    border: 1px solid ${theme.pointColor2};
+  }
+  ::placeholder {
+    color: ${theme.sideColor};
+  }
+`;
+export const CategoryContainer = css`
+  width: 40vw;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .categoryBtn {
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: bold;
+    border: 1px solid ${theme.mainColor};
+    &:hover {
+      background-color: #eceef0;
+      cursor: pointer;
+    }
+  }
+  .categoryBtn--selected {
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: bold;
+    border: 1px solid ${theme.mainColor};
+    background-color: ${theme.pointColor};
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
