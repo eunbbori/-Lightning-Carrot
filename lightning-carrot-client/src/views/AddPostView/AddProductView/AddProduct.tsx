@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import AppButton from "../../../components/Button/AppButton";
 /** @jsxImportSource @emotion/react */
 import Header from "../../../components/Header/Header";
 import ImageUpload from "../../../components/Image/ImageUpload";
 import AppInputRadio from "../../../components/InputRadio/AppInputRadio";
 import AppInputText from "../../../components/InputText/AppInputText";
+import { ProductPostProps } from "../../../interface/ProductPostProps";
 import { regionDepth } from "../../../mockData/regionMockData";
 import { HomeMainContainer, HomeMainWrapper } from "../../../styles/common";
 import {
+  AddBtnWrapper,
   CategoryContainer,
   ContentWrapper,
   imgContainer,
@@ -41,6 +43,9 @@ const AddProduct = () => {
     { value: "중고상품", htmlValue: "중고상품" },
     { value: "새상품", htmlValue: "새상품" },
   ];
+  const titleRef = useRef<HTMLInputElement>(null);
+  const statusRef = useRef<HTMLInputElement>(null);
+
   const [textCount, setTextCount] = useState<number>(0);
   const textCountHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextCount(event.target.value.length);
@@ -51,6 +56,7 @@ const AddProduct = () => {
     newSelected[idx] = true;
     setSelected(newSelected);
   };
+
   const [depth1Clicked, setDepth1Clicked] = useState<string[]>([]);
   const [depth2Clicked, setDepth2Clicked] = useState<string[]>([]);
   const [depth3Clicked, setDepth3Clicked] = useState<string[]>([]);
@@ -78,6 +84,30 @@ const AddProduct = () => {
 
   const depth2Arr = Object.values(regionDepth[depth1Idx] || []);
   const depth3Arr: any[] = Object.values(depth2Arr[0][depth2Idx] || []);
+
+  const addHandler = (event: React.FormEvent) => {
+    const title = titleRef.current!.value;
+    const status = statusRef?.current!.value;
+    console.log(status);
+
+    const productPost: ProductPostProps = {
+      title: title,
+      category:
+        categoryList.slice(1)[
+          isSelected.indexOf(JSON.parse("True".toLowerCase()))
+        ],
+      regionDepth1: Object.keys(
+        regionDepth[depth1Clicked.indexOf(JSON.parse("True".toLowerCase()))] ||
+          {},
+      )[0],
+      status: status,
+      price: 0,
+      content: "",
+    };
+    // console.log(productPost.status);
+    // console.log(statusRef);
+  };
+
   return (
     <>
       <Header />
@@ -98,6 +128,7 @@ const AddProduct = () => {
             </div>
             <div className="titleContainer">
               <AppInputText
+                refer={titleRef}
                 width={"70rem"}
                 height={"3rem"}
                 type={"text"}
@@ -145,7 +176,7 @@ const AddProduct = () => {
                         : "regionDepthBtn"
                     }
                     type={"button"}
-                    text={Object.keys(regionDepth[idx]) || {}}
+                    text={Object.keys(regionFirst) || {}}
                     onClick={() => regionDepth1Handler(idx)}
                   />
                 ))}
@@ -189,6 +220,7 @@ const AddProduct = () => {
               </div>
               <div className="RegionDepth3">
                 {typeof depth2Arr[0][0] === "object" &&
+                  depth3Arr[0] &&
                   depth3Arr[0].map((regionThird: any, idx: number) => (
                     <AppButton
                       css={RegionDepthBtnStyle}
@@ -217,6 +249,7 @@ const AddProduct = () => {
               {productStatusList.map((productStatus) => {
                 return (
                   <AppInputRadio
+                    refer={statusRef}
                     key={productStatus.value}
                     type={"radio"}
                     className={"productStatusRadio"}
@@ -263,6 +296,16 @@ const AddProduct = () => {
                 <span>/2000자</span>
               </div>
             </div>
+          </div>
+          <div css={AddBtnWrapper}>
+            <AppButton
+              width={"13rem"}
+              height={"5rem"}
+              className={"addBtn"}
+              type={"button"}
+              text={"등록하기"}
+              onClick={addHandler}
+            />
           </div>
         </div>
       </div>

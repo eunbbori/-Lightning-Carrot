@@ -151,3 +151,19 @@ export const CategoryContainer = css`
     }
   }
 `;
+export const AddBtnWrapper = css`
+  display: flex;
+  justify-content: end;
+
+  .addBtn {
+    font-size: 1.7rem;
+    background-color: ${theme.sideColor};
+    color: white;
+    padding: 1rem;
+    border-radius: 40px;
+
+    :hover {
+      background-color: ${theme.pointColor};
+    }
+  }
+`;
