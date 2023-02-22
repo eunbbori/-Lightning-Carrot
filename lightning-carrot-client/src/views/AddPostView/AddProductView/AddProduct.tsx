@@ -62,6 +62,7 @@ const AddProduct = () => {
     setDepth1Clicked(newClicked);
     setDepth1Idx(idx);
   };
+
   const regionDepth2Handler = (idx: number) => {
     const newClicked = Array(regionDepth.length).fill(false);
     newClicked[idx] = true;
@@ -74,9 +75,9 @@ const AddProduct = () => {
     newClicked[idx] = true;
     setDepth3Clicked(newClicked);
   };
-  const depth2Arr = Object.values(regionDepth[depth1Idx]);
-  const depth3Arr: any[] = Object.values(depth2Arr[0][depth2Idx]);
 
+  const depth2Arr = Object.values(regionDepth[depth1Idx] || []);
+  const depth3Arr: any[] = Object.values(depth2Arr[0][depth2Idx] || []);
   return (
     <>
       <Header />
@@ -144,7 +145,7 @@ const AddProduct = () => {
                         : "regionDepthBtn"
                     }
                     type={"button"}
-                    text={Object.keys(regionDepth[idx])}
+                    text={Object.keys(regionDepth[idx]) || {}}
                     onClick={() => regionDepth1Handler(idx)}
                   />
                 ))}
@@ -163,7 +164,8 @@ const AddProduct = () => {
                           : "regionDepthBtn"
                       }
                       type={"button"}
-                      text={depth2Arr[0][idx]}
+                      text={regionSecond}
+                      // text={depth2Arr[0][idx]}
                       onClick={() => regionDepth2Handler(idx)}
                     />
                   ))}
@@ -187,7 +189,6 @@ const AddProduct = () => {
               </div>
               <div className="RegionDepth3">
                 {typeof depth2Arr[0][0] === "object" &&
-                  depth3Arr[0] &&
                   depth3Arr[0].map((regionThird: any, idx: number) => (
                     <AppButton
                       css={RegionDepthBtnStyle}
@@ -195,13 +196,14 @@ const AddProduct = () => {
                       width={"6rem"}
                       height={"2rem"}
                       className={
-                        depth2Clicked[idx]
+                        depth3Clicked[idx]
                           ? "regionDepthBtn--clicked"
                           : "regionDepthBtn"
                       }
                       type={"button"}
-                      text={depth3Arr[depth2Idx][idx]}
-                      // onClick={() => regionDepth3Handler(idx)}
+                      text={regionThird}
+                      // text={depth3Arr[depth2Idx][idx]}
+                      onClick={() => regionDepth3Handler(idx)}
                     />
                   ))}
               </div>
